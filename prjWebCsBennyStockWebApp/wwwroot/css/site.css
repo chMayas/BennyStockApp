@@ -1,0 +1,128 @@
+:root {
+    --benny-red: #8b0000;
+    --benny-dark-red: #5f0000;
+    --benny-yellow: #f5c542;
+    --benny-black: #1f1f1f;
+    --benny-cream: #fff8ec;
+    --benny-light: #f8f4ec;
+}
+
+html {
+    font-size: 14px;
+}
+
+body {
+    background: var(--benny-light);
+    color: var(--benny-black);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.benny-navbar {
+    background: linear-gradient(90deg, var(--benny-dark-red), var(--benny-red));
+}
+
+.navbar-brand {
+    letter-spacing: 0.5px;
+    font-size: 1.35rem;
+}
+
+.nav-link {
+    font-weight: 500;
+}
+
+    .nav-link:hover {
+        color: var(--benny-yellow) !important;
+    }
+
+.benny-logout {
+    border: 1px solid var(--benny-yellow);
+    border-radius: 20px;
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+}
+
+.benny-footer {
+    background: var(--benny-black);
+    color: white;
+    text-align: center;
+    padding: 18px;
+}
+
+.btn-primary,
+.btn-success {
+    background-color: var(--benny-red);
+    border-color: var(--benny-red);
+}
+
+    .btn-primary:hover,
+    .btn-success:hover {
+        background-color: var(--benny-dark-red);
+        border-color: var(--benny-dark-red);
+    }
+
+.btn-warning,
+.benny-btn-yellow {
+    background-color: var(--benny-yellow);
+    border-color: var(--benny-yellow);
+    color: var(--benny-black);
+    font-weight: bold;
+}
+
+.table {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+    .table thead {
+        background: var(--benny-red);
+        color: white;
+    }
+
+.card,
+.benny-card {
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+    background: white;
+}
+
+.benny-hero {
+    background: linear-gradient(135deg, var(--benny-red), var(--benny-dark-red));
+    color: white;
+    border-radius: 22px;
+    padding: 40px;
+    margin-bottom: 30px;
+}
+
+    .benny-hero h1 {
+        font-weight: 800;
+    }
+
+.benny-badge {
+    display: inline-block;
+    background: var(--benny-yellow);
+    color: var(--benny-black);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.login-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--benny-red), var(--benny-dark-red));
+    display: flex;
+    align-items: center;
+}
+
+.login-card {
+    border-radius: 18px;
+    border: none;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+}
+
+.login-title {
+    color: var(--benny-red);
+    font-weight: 800;
+}

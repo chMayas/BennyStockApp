@@ -1,0 +1,67 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <title>Connexion - BennyStock</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+
+<body class="login-page">
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+
+                <div class="card login-card">
+                    <div class="card-body p-4">
+
+                        <h2 class="text-center login-title mb-2">BennyStock</h2>
+                        <p class="text-center text-muted mb-4">
+                            Gestion de stock multi-restaurants
+                        </p>
+
+                        @if (ViewBag.Error != null)
+                        {
+                            <div class="alert alert-danger">
+                                @ViewBag.Error
+                            </div>
+                        }
+
+                        <form method="post">
+                            <div class="mb-3">
+                                <label class="form-label">Email</label>
+                                <input name="email" type="email" class="form-control" required />
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Mot de passe</label>
+                                <input name="password" type="password" class="form-control" required />
+                            </div>
+
+                            <button type="submit" class="btn btn-primary w-100">
+                                Se connecter
+                            </button>
+                        </form>
+
+                        <hr />
+
+                        <small class="text-muted">
+                            Admin : admin@benny.com / 1234<br />
+                            Boucherville : boucherville@benny.com / 1234<br />
+                            La Prairie : laprairie@benny.com / 1234
+                        </small>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

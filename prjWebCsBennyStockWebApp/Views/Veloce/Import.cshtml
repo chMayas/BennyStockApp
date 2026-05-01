@@ -1,0 +1,60 @@
+﻿@{
+    ViewData["Title"] = "Import Veloce";
+}
+
+<h2>Import des ventes Veloce</h2>
+
+<p>
+    Importer un fichier CSV contenant les ventes pour soustraire automatiquement les quantités du stock.
+</p>
+
+<div class="alert alert-info">
+    Format attendu : <strong>Code,Quantite</strong><br />
+    Exemple : BACON001,2
+</div>
+
+@if (ViewBag.Message != null)
+{
+    <div class="alert alert-success">
+        @ViewBag.Message
+    </div>
+}
+
+@if (ViewBag.Errors != null && ((List<string>)ViewBag.Errors).Any())
+{
+    <div class="alert alert-warning">
+        <strong>Erreurs :</strong>
+        <ul>
+            @foreach (var error in (List<string>)ViewBag.Errors)
+            {
+                <li>@error</li>
+            }
+        </ul>
+    </div>
+}
+
+<div class="text-danger">
+    @Html.ValidationSummary()
+</div>
+
+<form asp-action="Import" method="post" enctype="multipart/form-data">
+
+    <div class="mb-3">
+        <label class="form-label">Restaurant</label>
+        <select name="restaurantId" asp-items="ViewBag.Restaurants" class="form-control"></select>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Fichier CSV Veloce</label>
+        <input name="csvFile" type="file" class="form-control" accept=".csv" required />
+    </div>
+
+    <button type="submit" class="btn btn-primary">
+        Importer les ventes
+    </button>
+
+    <a asp-controller="Stock" asp-action="Index" class="btn btn-secondary">
+        Retour aux stocks
+    </a>
+
+</form>

@@ -1,0 +1,64 @@
+﻿@{
+    ViewData["Title"] = "Accueil";
+}
+
+<div class="benny-hero">
+    <span class="benny-badge">Rôtisseries Benny</span>
+    <h1>Gestion de stock multi-restaurants</h1>
+    <p class="lead">
+        Application interne pour gérer les stocks, transferts, réceptions fournisseurs,
+        ventes Veloce et inventaires Excel.
+    </p>
+</div>
+
+<div class="row g-4">
+
+    <div class="col-md-4">
+        <div class="benny-card p-4">
+            <h4>Stocks</h4>
+            <p>Consulter les quantités disponibles par restaurant.</p>
+            <a asp-controller="Stock" asp-action="Index" class="btn btn-primary">Voir les stocks</a>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="benny-card p-4">
+            <h4>Disponibilité</h4>
+            <p>Comparer les produits disponibles entre Boucherville et La Prairie.</p>
+            <a asp-controller="Stock" asp-action="Availability" class="btn btn-primary">Comparer</a>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="benny-card p-4">
+            <h4>Transferts</h4>
+            <p>Créer une demande de transfert avec validation automatique du stock.</p>
+            <a asp-controller="Transfer" asp-action="Index" class="btn btn-primary">Gérer transferts</a>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="benny-card p-4">
+            <h4>Réception fournisseur</h4>
+            <p>Ajouter les produits reçus et joindre une facture Sysco ou Costco.</p>
+            <a asp-controller="Receiving" asp-action="Create" class="btn btn-primary">Entrée stock</a>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="benny-card p-4">
+            <h4>Veloce</h4>
+            <p>Importer un fichier CSV de ventes pour soustraire automatiquement le stock.</p>
+            <a asp-controller="Veloce" asp-action="Import" class="btn btn-primary">Importer ventes</a>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="benny-card p-4">
+            <h4>Inventaire Excel</h4>
+            <p>Exporter automatiquement l’inventaire mensuel en fichier Excel.</p>
+            <a asp-controller="Inventory" asp-action="Export" class="btn btn-primary">Exporter Excel</a>
+        </div>
+    </div>
+
+</div>

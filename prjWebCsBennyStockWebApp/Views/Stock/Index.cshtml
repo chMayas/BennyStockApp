@@ -1,0 +1,43 @@
+﻿@model List<prjWebCsBennyStockWebApp.Models.Stock>
+
+@{
+    ViewData["Title"] = "Stocks";
+}
+
+<h2>Liste des stocks</h2>
+
+<div class="mb-3">
+    <a asp-controller="Inventory" asp-action="Export" class="btn btn-success">
+        Télécharger l'inventaire Excel
+    </a>
+</div>
+
+<form method="get" class="mb-3">
+    <label for="restaurantId" class="form-label">Filtrer par restaurant :</label>
+
+    <select name="restaurantId" id="restaurantId" asp-items="ViewBag.Restaurants" class="form-select">
+        <option value="">Tous les restaurants</option>
+    </select>
+
+    <button type="submit" class="btn btn-primary mt-2">Filtrer</button>
+</form>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Restaurant</th>
+            <th>Produit</th>
+            <th>Quantité</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var stock in Model)
+        {
+            <tr>
+                <td>@stock.Restaurant?.Name</td>
+                <td>@stock.Item?.Name</td>
+                <td>@stock.Quantity</td>
+            </tr>
+        }
+    </tbody>
+</table>

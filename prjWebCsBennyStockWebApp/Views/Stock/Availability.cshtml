@@ -1,0 +1,27 @@
+﻿@model List<prjWebCsBennyStockWebApp.Models.AvailabilityViewModel>
+
+@{
+    ViewData["Title"] = "Disponibilité entre restaurants";
+}
+
+<h2>Disponibilité entre restaurants</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Produit</th>
+            <th>Benny Boucherville</th>
+            <th>Benny La Prairie</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ProductName</td>
+                <td>@item.BouchervilleQuantity</td>
+                <td>@item.LaPrairieQuantity</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,37 @@
+﻿@model List<prjWebCsBennyStockWebApp.Models.Transfer>
+
+@{
+    ViewData["Title"] = "Transferts";
+}
+
+<h2>Liste des transferts</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Nouvelle demande</a>
+</p>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Produit</th>
+            <th>Quantité</th>
+            <th>De</th>
+            <th>Vers</th>
+            <th>Status</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var t in Model)
+        {
+            <tr>
+                <td>@t.Item?.Name</td>
+                <td>@t.Quantity</td>
+                <td>@t.FromRestaurant?.Name</td>
+                <td>@t.ToRestaurant?.Name</td>
+                <td>@t.Status</td>
+                <td>@t.Date.ToString("yyyy-MM-dd HH:mm")</td>
+            </tr>
+        }
+    </tbody>
+</table>
